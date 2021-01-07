@@ -30,22 +30,25 @@ function makeAJAXCall(methodType, url, callback, async = true, data = null){
 
 const getURL = "http://127.0.0.1:3000/employees/1";
 function getUserDetails(data){
-    console.log("Get User Data  at:" + showTime() + "data:" + data)
+    console.log("Get User Data at:" + showTime() + "data:" + data)
 }
+
 makeAJAXCall("GET", getURL, getUserDetails, true);
+
 console.log("Made GET AJAX Call to server at:" + showTime());
 const deleteURL = "http://localhost:3000/employees/4";
+
 function userDeleted(data){
     console.log("User Deleted at:" + showTime() + "data: " + data)
 }
  
 makeAJAXCall("DELETE", deleteURL, userDeleted, false);
 console.log("Made DELETE AJAX Call to server at:" + showTime()); 
-const postURL = "http://localhost:3000/employees";
+const postURL = "http://localhost:3000/employees/";
 const emplData = {"name": "Harry", "salary": "5000"};
 
 function userAdded(data){
-    console.log("User Added" + data);
+    console.log("User Added at:" + showTime() + "data:" + data);
 }
 
 makeAJAXCall("POST", postURL, userAdded, true, emplData);
